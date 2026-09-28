@@ -1,3 +1,11 @@
+window.addEventListener('load', function() {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener('popstate', function() {
+  window.scrollTo(0, 0);
+});
+
 const handleFirstTab = (e) => {
   if(e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
@@ -38,6 +46,9 @@ window.addEventListener("scroll", () => {
 });
 
       document.addEventListener('DOMContentLoaded', function() {
+        // Scroll to top on page load to ensure we start at the top after refresh
+        window.scrollTo(0, 0);
+
         const webTab = document.querySelector('.work__tab[data-category="web"]');
         const uiuxTab = document.querySelector('.work__tab[data-category="uiux"]');
         const webProjects = document.querySelectorAll('.work__box[data-category="web"]');
